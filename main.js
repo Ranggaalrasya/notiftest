@@ -8,9 +8,18 @@ const firebaseConfig = {
     appId: "APP_ID"
 };
 
+
+
 // Inisialisasi Firebase
 firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
+
+if (typeof firebase === "undefined") {
+    console.error("Firebase SDK gagal dimuat!");
+} else {
+    console.log("Firebase SDK berhasil dimuat!");
+}
+
 
 // Daftarkan service worker
 if ("serviceWorker" in navigator) {
